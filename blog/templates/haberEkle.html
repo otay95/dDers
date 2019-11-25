@@ -1,0 +1,18 @@
+{% extends 'iskelet.html' %}
+
+{% block icerik %}
+<form method="POST" class="mt-4">
+    <h1>Haber Ekleme Formu</h1>
+    {% csrf_token %}
+    <div class="form-group">
+	<label for="baslik">Başlık</label>
+	<input type="text" name="baslik" class="form-control" id="baslik" placeholder="Haberin başlığını giriniz">
+    </div>
+    <div class="form-group">
+	<label for="icerik">İçerik</label>
+	<textarea class="form-control" name="icerik" id="icerik" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary float-right">Gönder</button>
+</form>
+{% endblock %}
+

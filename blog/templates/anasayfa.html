@@ -1,0 +1,19 @@
+{% extends 'iskelet.html' %}
+{% block icerik %}
+<div class="row mt-4">
+    {% for haber in haberler %}
+    <div class="col-6 pb-4">
+	<div class="card">
+	    <div class="card-body">
+		<h5 class="card-title">{{ haber.baslik }}</h5>
+		<h6 class="card-subtitle mb-2 text-muted"># {{ haber.slug }}</h6>
+		<p class="card-text">{{ haber.icerik }}</p>
+		<a href="/haber/{{ haber.slug }}/" class="card-link btn btn-primary">Detayları Gör</a>
+		<a href="/haberGuncelle/{{ haber.slug }}/" class="card-link btn btn-warning">Güncelle</a>
+		<a href="/haberSil/{{ haber.slug }}/" class="card-link btn btn-danger">Sil</a>
+	    </div>
+	</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
